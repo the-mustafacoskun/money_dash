@@ -1,0 +1,12 @@
+/* Bu satırı sil veya yorum satırı yap */
+@import "tailwindcss";
+/* Scrollbar gizleme sınıfı */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE ve Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
