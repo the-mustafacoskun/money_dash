@@ -8,55 +8,22 @@ import {
   Legend,
 } from "recharts";
 import { RechartsDevtools } from "@recharts/devtools";
+import { use } from "react";
+import { useWeeklyActivity } from "../../hooks/useWeeklyActivity";
 
 // #region Sample data
-const data = [
-  {
-    name: "Sat",
-    withdraw: 4000,
-    deposit: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Sun",
-    withdraw: 3000,
-    deposit: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Mon",
-    withdraw: 2000,
-    deposit: 1980,
-    amt: 2290,
-  },
-  {
-    name: "Tue",
-    withdraw: 2780,
-    deposit: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Wed",
-    withdraw: 1890,
-    deposit: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Thu",
-    withdraw: 2390,
-    deposit: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Fri",
-    withdraw: 3490,
-    deposit: 4300,
-    amt: 2100,
-  },
-];
 
-// #endregion
+
+
 export const MyBarChart = () => {
+  const { data,isLoading,error } = useWeeklyActivity();
+
+if (isLoading) {
+  return <div>Loading chart...</div>;
+}
+if (error) {
+  return <div>Error loading chart: {error.message}</div>;
+}
   return (
     <BarChart
       style={{
@@ -75,7 +42,7 @@ export const MyBarChart = () => {
       }}
     >
       <CartesianGrid strokeDasharray="3 0" vertical={false} />
-      <XAxis dataKey="name" axisLine={false} tickLine={false} />
+      <XAxis dataKey="day" axisLine={false} tickLine={false} />
       <YAxis width={80} axisLine={false} dx={-20} />
       <Tooltip
         cursor={{ fill: "#F5F9FA", opacity: 0.8 }} // Mouse altındaki gri arka plan gölgesi

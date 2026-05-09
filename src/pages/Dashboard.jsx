@@ -1,11 +1,15 @@
-import BalanceHistory from "../components/BalanceHistory";
-import ExpensePieChart from "../components/charts/ExpensesChart";
-import { MyCards } from "../components/MyCards";
-import { QuickTransfer } from "../components/QuickTransfer";
-import { ReceiverInfo } from "../components/ReceiverInfo";
-import { RecentTransactions } from "../components/RecentTransactions";
-import { WeekleyActivity } from "../components/WeekleyActivity";
+import React from "react";
 
+// Charts - charts klasöründen
+import ExpensePieChart from "../components/charts/ExpensesChart"; // Dosya adın ExpensesChart.jsx görünüyor
+
+// Dashboard Bileşenleri - dashboardComponents klasöründen
+import BalanceHistory from "../components/dashboardComponents/BalanceHistory";
+import { MyCards } from "../components/dashboardComponents/MyCards";
+import { QuickTransfer } from "../components/dashboardComponents/QuickTransfer";
+import { WeekleyActivity } from "../components/dashboardComponents/WeekleyActivity";
+import { RecentTransaction } from "../components/dashboardComponents/RecentTransaction";
+import {RecentTransactions} from "../components/dashboardComponents/RecentTransactions";
 export const Dashboard = () => {
   return (
     <div className="flex flex-col px-8 py-10 w-full mx-auto">

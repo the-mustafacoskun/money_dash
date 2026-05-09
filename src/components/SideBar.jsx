@@ -6,52 +6,48 @@ import { CreditCardsIcon } from "./icons/CreditCardsIcon";
 import { LoanIcon } from "./icons/LoanIcon";
 import { ServicesIcon } from "./icons/ServicesIcon";
 import { MyPrivilegesIcon } from "./icons/MyPrivilegesIcon";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
+  const menuItems = [
+    {
+      name: "Dashboard",
+      icon: <House className="w-6.25 h-6.25 " />,
+      path: "/",
+    },
+    { name: "Transactions", icon: <TransactionsIcon />, path: "/transactions" },
+    { name: "Accounts", icon: <UserIcon />, path: "/accounts" },
+    { name: "Investments", icon: <InvestmentsIcon />, path: "/investments" },
+    { name: "Credit Cards", icon: <CreditCardsIcon />, path: "/credit-cards" },
+    { name: "Loans", icon: <LoanIcon />, path: "/loans" },
+    { name: "Services", icon: <ServicesIcon />, path: "/services" },
+    {
+      name: "My Privileges",
+      icon: <MyPrivilegesIcon />,
+      path: "/my-privileges",
+    },
+    {
+      name: "Settings",
+      icon: <Settings strokeWidth={3} className="w-6.25 h-6.25" />,
+      path: "/settings",
+    },
+  ];
+
   return (
-    <aside  >
-      <div className="flex flex-col sticky top-0 pt-7.5 font-medium text-[18px] gap-10.5 w-62.5 [&>div]:ml-10 [&>div]:gap-x-10 [&_>div]:flex bg-white h-screen text-[#B1B1B1] [&_>div]:hover:text-[#2D60FF]">
-        
-        <div >
-          
-          <div><House className="w-6.25 h-6.25 "/></div>
-          <div>Dashboard</div>
-          
-        </div>
-        
-        <div >
-          <div><TransactionsIcon /></div>
-          <div>Transactions</div>
-        </div>
-        <div >
-          <div><UserIcon/></div>
-          <div>Accounts</div>
-        </div>
-        <div >
-          <div><InvestmentsIcon/></div>
-          <div>Investments</div>
-        </div>
-        <div >
-          <div><CreditCardsIcon/></div>
-          <div>Credit Cards</div>
-        </div>
-        <div >
-          <div><LoanIcon/></div>
-          <div>Loans</div>
-        </div>
-        <div >
-          <div><ServicesIcon/></div>
-          <div>Services</div>
-        </div>
-        <div >
-          <div><MyPrivilegesIcon/></div>
-          <div>My Privileges</div>
-        </div>
-        <div >
-          <div><Settings strokeWidth={3} className="w-6.25 h-6.25"/></div>
-          <div>Setting</div>
-        </div>
+    <aside>
+      <div className="flex flex-col sticky top-0 px-8 pt-7.5 font-medium text-[18px] gap-10.5 w-62.5  bg-white h-screen text-[#B1B1B1]">
+        {menuItems.map((item) => (
+          <NavLink
+            to={item.path}
+            key={item.name}
+            exact={item.path === "/"}
+            activeClassName="text-[#2D60FF] border-l-[6px] border-[#2D60FF] -ml-8 pl-[26px] "
+            className="flex items-center transition-colors hover:text-[#2D60FF] "
+          >
+            {item.icon}
+            <span className="ml-4">{item.name}</span>
+          </NavLink>
+        ))}
       </div>
     </aside>
   );

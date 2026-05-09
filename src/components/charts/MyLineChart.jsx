@@ -8,18 +8,14 @@ import {
   AreaChart,
   Area
 } from 'recharts';
+import { useBalanceHistory } from '../../hooks/useBalanceHistory';
 
-const data = [
-  { name: 'Sat', pv: 200 },
-  { name: 'Sun', pv: 139 },
-  { name: 'Mon', pv: 280 },
-  { name: 'Tue', pv: 390 },
-  { name: 'Wed', pv: 480 },
-  { name: 'Thu', pv: 380 },
-  { name: 'Fri', pv: 430 },
-];
 
 export function MyLineChart() {
+  const {data, isLoading, error} = useBalanceHistory();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading data</div>;
   return (
     <div className="w-full h-full min-h-62.5 select-none">
       <ResponsiveContainer width="100%" height="100%">
@@ -39,7 +35,7 @@ export function MyLineChart() {
           <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="#F3F3F3" />
           
           <XAxis 
-            dataKey="name" 
+            dataKey="day" 
             axisLine={false} 
             tickLine={false} 
             tick={{ fill: '#718EBF', fontSize: 12 }}
@@ -68,7 +64,7 @@ export function MyLineChart() {
           
           <Area
             type="monotone"
-            dataKey="pv"
+            dataKey="balance"
             stroke="#1814F3"
             strokeWidth={3}
             fillOpacity={1}

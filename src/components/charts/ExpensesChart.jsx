@@ -8,12 +8,9 @@ import {
   Cell,
 } from "recharts";
 
-const data = [
-  { name: "Entertainment", value: 30 },
-  { name: "Bill Expense", value: 15 },
-  { name: "Investment", value: 20 },
-  { name: "Others", value: 35 },
-];
+import { useExpenseStats } from "../../hooks/useExpenseStats";
+
+
 
 const COLORS = ["#343C6A", "#FC66AA", "#396AFF", "#232323"];
 const RADIAN = Math.PI / 180;
@@ -104,12 +101,16 @@ const renderCustomizedLabel = ({
 };
 
 const ExpensePieChart = () => {
+  
+const {correctedExpensesStats, isLoading, isError} = useExpenseStats();
+if (isLoading) return <div>Loading...</div>;
+if (isError) return <div>Error loading data</div>;
   return (
     <div className="w-full h-80">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
-            data={data}
+            data={correctedExpensesStats}
             cx="50%"
             cy="50%"
             dataKey="value"
@@ -120,7 +121,7 @@ const ExpensePieChart = () => {
             labelLine={false}
             isAnimationActive={true}
           >
-            {data.map((entry, index) => (
+            {correctedExpensesStats.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}

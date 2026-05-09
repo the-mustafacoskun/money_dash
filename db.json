@@ -1,0 +1,65 @@
+{
+  "profile": {
+    "id": 1,
+    "name": "Mustafa Sarp",
+    "email": "mustafaSarp@gmail.com",
+    "username": "mas_dev"
+  },
+  "summary": {
+    "id": 1,
+    "balance": 25500,
+    "income": 8400,
+    "expense": 3200
+  },
+  "cards": [
+    { "id": 1, "number": "1234", "holder": "Mustafa Sarp", "expiry": "12/26", "balance": 12000, "type": "visa" },
+    { "id": 2, "number": "5678", "holder": "Mustafa Sarp", "expiry": "09/25", "balance": 8500, "type": "mastercard" },
+    { "id": 3, "number": "5345", "holder": "Mustafa Sarp", "expiry": "08/28", "balance": 18900, "type": "AMEX" }
+
+  ],
+  "contacts": [
+    { "id": 1, "name": "Livia Bator", "role": "CEO", "avatar": "" },
+    { "id": 2, "name": "Randy Press", "role": "Director", "avatar": "" },
+    { "id": 3, "name": "Workman", "role": "Designer", "avatar": "" }
+  ],
+  "balanceHistory": [
+    { "id": 1, "day": "Mon", "balance": 200 },
+    { "id": 2, "day": "Tue", "balance": 400 },
+    { "id": 3, "day": "Wed", "balance": 300 },
+    { "id": 4, "day": "Thu", "balance": 600 },
+    { "id": 5, "day": "Fri", "balance": 800 },
+    { "id": 6, "day": "Sat", "balance": 500 },
+    { "id": 7, "day": "Sun", "balance": 900 }
+  ],
+  "weeklyActivity": [
+    { "id": 1, "day": "Mon", "deposit": 4053, "withdraw": 2070 },
+    { "id": 2, "day": "Tue", "deposit": 3020, "withdraw": 1040 },
+    { "id": 3, "day": "Wed", "deposit": 5200, "withdraw": 3060 },
+    { "id": 4, "day": "Thu", "deposit": 2030, "withdraw": 4050 },
+    { "id": 5, "day": "Fri", "deposit": 6040, "withdraw": 2004 },
+    { "id": 6, "day": "Sat", "deposit": 4501, "withdraw": 3502 },
+    { "id": 7, "day": "Sun", "deposit": 1020, "withdraw": 506 }
+  ],
+  "transactions": [
+    { "id": "tr_Xk92A", "title": "Deposit from my Card", "date": "28 Jan 2021", "amount": -850, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Transfer" },
+    { "id": "in_Lm31B", "title": "Deposit Paypal", "date": "25 Jan 2021", "amount": 2500, "type": "paypal", "color": "bg-blue-100 text-blue-600", "category": "Income" },
+    { "id": "tr_Nm44C", "title": "Jemi Wilson", "date": "21 Jan 2021", "amount": 5400, "type": "transfer", "color": "bg-green-100 text-green-600", "category": "Transfer" },
+    { "id": "sh_Pq77D", "title": "Amazon Online Store", "date": "20 Jan 2021", "amount": -120, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Shopping" },
+    { "id": "sv_Rr55E", "title": "Spotify Subscription", "date": "19 Jan 2021", "amount": -15, "type": "card", "color": "bg-red-100 text-red-600", "category": "Service" },
+    { "id": "sv_Tt88F", "title": "Netflix Monthly", "date": "18 Jan 2021", "amount": -12, "type": "card", "color": "bg-red-100 text-red-600", "category": "Service" },
+    { "id": "in_Uu99G", "title": "Salary Payment", "date": "15 Jan 2021", "amount": 4200, "type": "transfer", "color": "bg-green-100 text-green-600", "category": "Income" },
+    { "id": "fd_Vv22H", "title": "Starbucks Coffee", "date": "14 Jan 2021", "amount": -7, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Food" },
+    { "id": "sh_Ww33I", "title": "Apple Store Purchase", "date": "12 Jan 2021", "amount": -999, "type": "card", "color": "bg-blue-100 text-blue-800", "category": "Shopping" },
+    { "id": "tr_Xx44J", "title": "Michael John", "date": "10 Jan 2021", "amount": 150, "type": "transfer", "color": "bg-green-100 text-green-600", "category": "Transfer" },
+    { "id": "tp_Yy55K", "title": "Uber Trip", "date": "09 Jan 2021", "amount": -25, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Transport" },
+    { "id": "in_Zz66L", "title": "Freelance Project", "date": "08 Jan 2021", "amount": 800, "type": "paypal", "color": "bg-blue-100 text-blue-600", "category": "Income" },
+    { "id": "fd_Aa77M", "title": "Grocery Store", "date": "07 Jan 2021", "amount": -230, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Food" },
+    { "id": "hl_Bb88N", "title": "Gym Membership", "date": "05 Jan 2021", "amount": -45, "type": "transfer", "color": "bg-green-100 text-green-600", "category": "Health" },
+    { "id": "bl_Cc99O", "title": "Electric Bill", "date": "04 Jan 2021", "amount": -110, "type": "transfer", "color": "bg-red-100 text-red-600", "category": "Bills" },
+    { "id": "sv_Dd11P", "title": "Google Cloud", "date": "03 Jan 2021", "amount": -30, "type": "card", "color": "bg-blue-100 text-blue-800", "category": "Service" },
+    { "id": "hm_Ee22Q", "title": "Rent Payment", "date": "01 Jan 2021", "amount": -1500, "type": "transfer", "color": "bg-red-100 text-red-600", "category": "Home" },
+    { "id": "in_Ff33R", "title": "Bonus", "date": "31 Dec 2020", "amount": 500, "type": "transfer", "color": "bg-green-100 text-green-600", "category": "Income" },
+    { "id": "en_Gg44S", "title": "Steam Games", "date": "30 Dec 2020", "amount": -60, "type": "paypal", "color": "bg-blue-100 text-blue-600", "category": "Entertainment" },
+    { "id": "tv_Hh55T", "title": "Airbnb Booking", "date": "28 Dec 2020", "amount": -450, "type": "card", "color": "bg-yellow-100 text-yellow-600", "category": "Travel" }
+  ]
+}

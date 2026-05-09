@@ -89,7 +89,7 @@ function Preferences() {
         <div className="flex items-center gap-4">
           {/* Toggle Switch */}
           <div
-            className={`relative w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+            className={`relative w-14 h-7 shrink-0 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
               accountRecommendation ? "bg-[#16DBCC]" : "bg-[#BDC3C7]"
             }`}
             onClick={handleToggleAccountRecommendation}
